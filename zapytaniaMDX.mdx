@@ -1,0 +1,138 @@
+-- Zapytanie 1
+-- Porównaj ró¿nice w ob³o¿eniu poci¹gów w ró¿nych porach dnia
+ 
+
+SELECT 
+	NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+	NON EMPTY { [ID Czas Przyjazdu].[Pora Dnia].[Pora Dnia].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+
+-- Zapytanie 2
+-- Porównaj ob³o¿enie poci¹gów w ró¿nych dniach tygodnia.
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY { [Data].[Dzien Tygodnia].[Dzien Tygodnia].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+
+-- Zapytanie 3
+-- Podaj po³¹czenia, które maj¹ ob³o¿enie poni¿ej 60%.
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY { 
+        FILTER(
+            [Polaczenie].[Nazwa Polaczenia].[Nazwa Polaczenia].ALLMEMBERS, 
+            [Measures].[SrednieOblozenie] < 0.6
+        )
+    } ON ROWS 
+FROM [Rail DW]
+
+-- Zapytanie 4
+-- Wypisz, ile osób koñczy trasê na jakim przystanku na danym kursie.
+
+SELECT 
+    NON EMPTY { [Measures].[Ilosc Biletow] } ON COLUMNS, 
+    NON EMPTY { [ID Przystanek Kon].[Nazwa Przystanku].[Nazwa Przystanku].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+WHERE ([NabycieBiletuKursNO].[Kurs NO].&[1])
+
+
+-- Zapytanie 5
+-- Podaj ró¿nice w ob³o¿eniu poci¹gów w ró¿nych miesi¹cach roku na danych po³¹czeniach.
+
+WITH 
+SET [PolaczeniaSet] AS {
+    [Polaczenie].[Nazwa Polaczenia].&[Belchatów - Jawor],
+    [Polaczenie].[Nazwa Polaczenia].&[Przemysl - Grudziadz]
+}
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY 
+        CROSSJOIN(
+            [Data].[Miesiac].[Miesiac].ALLMEMBERS,
+            [PolaczeniaSet]
+        ) ON ROWS 
+FROM [Rail DW]
+
+
+-- Zapytanie 6
+-- Podaj œrednie ob³o¿enie wagonów przedzia³owych/bezprzedzia³owych danego poci¹gu na trasach jakie wykona³ w ci¹gu miesi¹ca.
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenieBezprzedzialowe], [Measures].[SrednieOblozeniePrzedzialowe] } ON COLUMNS, 
+    NON EMPTY { [Data].[Miesiac].[Miesiac].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+WHERE (
+    [Pociag].[Nr Seryjny].&[BSZZM295925113225543]
+)
+
+
+-- Zapytanie 7
+-- Porównaj ob³o¿enie wszystkich modeli poci¹gów wykonuj¹cych  po³¹czenia o podobnej godzinie
+
+WITH 
+SET [PodobneGodziny] AS
+    FILTER(
+        [ID Czas Odjazdu].[Godzina].[Godzina].ALLMEMBERS, 
+        [ID Czas Odjazdu].[Godzina].CURRENTMEMBER.MEMBER_VALUE >= 8 -- np. pocz¹tkowa godzina
+        AND [ID Czas Odjazdu].[Godzina].CURRENTMEMBER.MEMBER_VALUE <= 9 -- np. koñcowa godzina
+    )
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY { 
+        [Pociag].[Model].[Model].ALLMEMBERS *
+        [PodobneGodziny]
+    } ON ROWS 
+FROM [Rail DW]
+
+
+-- Zapytanie 8
+-- Porównaj ob³o¿enie poci¹gów je¿d¿¹cych na tej samej trasie, ale z inn¹ maksymaln¹ prêdkoœci¹.
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY {[Pociag].[Kategoria Predkosci].[Kategoria Predkosci].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+WHERE (
+    [Polaczenie].[Nazwa Polaczenia].&[Myszków - Rybnik]
+)
+-- Zapytanie 9
+-- Porównaj ob³o¿enie poci¹gów je¿d¿¹cych na tej samej trasie, wyprodukowanych w innych latach. 
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY { [Pociag].[Kategoria Rok Produkcji].[Kategoria Rok Produkcji].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+WHERE (
+    [Polaczenie].[Nazwa Polaczenia].&[Myszków - Rybnik]
+)
+
+-- Zapytanie 10
+-- Porównaj œrednie ob³o¿enie poci¹gów kursuj¹cych w okresie letnim, wyposa¿onych w klimatyzacjê, z poci¹gami bez klimatyzacji.
+
+SELECT 
+    NON EMPTY { [Measures].[SrednieOblozenie] } ON COLUMNS, 
+    NON EMPTY { [Data].[Pora Roku].[Pora Roku].&[lato] * [Pociag].[Klimatyzacja].[Klimatyzacja].ALLMEMBERS } ON ROWS 
+FROM [Rail DW]
+
+-- Zapytanie 11
+-- Porównaj liczbe sprzedanych biletów w poszczególnych porach roku
+
+SELECT NON EMPTY { [Measures].[Ilosc Biletow] } ON COLUMNS,
+	NON EMPTY { ([Data].[Data pora roku hierarchia].[Pora Roku].ALLMEMBERS ) } ON ROWS
+FROM [Rail DW]
+
+-- Zapytanie 12
+-- Wymieñ 5 miesiêcy z najwy¿sz¹ liczb¹ sprzedanych biletów
+
+SELECT 
+    NON EMPTY { [Measures].[Ilosc Biletow] } ON COLUMNS,
+    NON EMPTY { 
+        TOPCOUNT(
+            [Data].[Miesiac].[Miesiac].ALLMEMBERS, 
+            5, -- Liczba najlepszych miesiêcy
+            [Measures].[Ilosc Biletow]
+        )
+    } ON ROWS
+FROM [Rail DW]

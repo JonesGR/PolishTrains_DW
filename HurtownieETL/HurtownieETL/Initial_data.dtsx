@@ -1,0 +1,3128 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/24/2024 5:36:19 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-SAM7014"
+  DTS:CreatorName="DESKTOP-SAM7014\Dell"
+  DTS:DTSID="{779C022A-A55B-4064-9293-23642349642C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Initial_data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{C8FA8AB6-3B3C-4706-801D-3B291C15989C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[create_auxiliary_tables.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{7FF3C12A-D88D-455E-9B79-269507B10E61}"
+      DTS:ObjectName="create_auxiliary_tables.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\create_auxiliary_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2170867C-9315-4EE1-AF6C-39A063C58AB2}"
+      DTS:ObjectName="DESKTOP-SAM7014\SQLDEV.auxiliary">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SAM7014\SQLDEV;Initial Catalog=auxiliary;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Initial_data-{2170867C-9315-4EE1-AF6C-39A063C58AB2}DESKTOP-SAM7014\SQLDEV.auxiliary;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.master]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+      DTS:ObjectName="DESKTOP-SAM7014\SQLDEV.master">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SAM7014\SQLDEV;Initial Catalog=master;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Initial_data-{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}DESKTOP-SAM7014\SQLDEV.master;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.railDW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{12003FD9-B172-4036-BC81-9BE65DDCB876}"
+      DTS:ObjectName="DESKTOP-SAM7014\SQLDEV.railDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SAM7014\SQLDEV;Initial Catalog=railDW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Initial_data-{12003FD9-B172-4036-BC81-9BE65DDCB876}DESKTOP-SAM7014\SQLDEV.railDW;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[dropping_auxiliary_tables.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{28678B6B-1CBE-4544-93FA-24C176E45D41}"
+      DTS:ObjectName="dropping_auxiliary_tables.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\dropping_auxiliary_tables.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[holiday.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B956FF8C-22D0-4BCC-88C2-AFBB17123119}"
+      DTS:ObjectName="holiday.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\holiday.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[season.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C8B6A718-9672-4A14-A710-1F306B3BECF8}"
+      DTS:ObjectName="season.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\season.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[time.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{C6705A18-AD08-46D7-92D5-6C8DEA22201D}"
+      DTS:ObjectName="time.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\time.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vacation.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{0D1A96A7-4B6A-4391-AA4C-8F5BB5DE9A19}"
+      DTS:ObjectName="vacation.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Dell\Documents\HurtownieDanych\zapytaniaMDX\scripts\vacation.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create auxiliary tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{84C0512C-7531-43AD-9D41-844CB54B5595}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create auxiliary tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="create_auxiliary_tables.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dropping auxiliary tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1FF76010-3BB4-45CD-B217-4A4B632DFE3D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dropping auxiliary tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="dropping_auxiliary_tables.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into date"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A5FC847E-7100-4C51-8D79-F05C96E04BCA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into date"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Inserting into date\Adding Holidays"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Adding Holidays"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[holidays]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[holidays]) [refTable]
+where [refTable].[date] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="holiday" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="bank_holiday" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into date\Adding Holidays.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">date</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="500"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[holiday]"
+                      name="holiday"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">holiday</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[bank_holiday]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[bank_holiday]"
+                      name="bank_holiday"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">bank_holiday</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Adding Season"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Adding Season"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[season]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT "begining", "end", type
+FROM season
+WHERE ? BETWEEN "begining" AND "end"
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="begining" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="end" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="type" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into date\Adding Season.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Adding Season.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Adding Season.Inputs[Lookup Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">begining</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Adding Season.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Season.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season.Outputs[Lookup Match Output].Columns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="500"
+                      lineageId="Package\Inserting into date\Adding Season.Outputs[Lookup Match Output].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">type</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Season.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Season.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Season.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Inserting into date\Adding Season.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Season.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Season.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Adding Season Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Adding Season Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Adding Season Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Adding Season Column.Inputs[Derived Column Input].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="type"
+                      lineageId="Package\Inserting into date\Adding Season.Outputs[Lookup Match Output].Columns[type]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Inserting into date\Adding Season Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Output].Columns[PoraRoku]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Output].Columns[PoraRoku]"
+                      name="PoraRoku"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,500,1252)#{Package\Inserting into date\Adding Season.Outputs[Lookup Match Output].Columns[type]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,500,1252)type</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Inserting into date\Adding Season Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Adding Vacation"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Adding Vacation"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[vacation]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM vacation WHERE ? BETWEEN begining AND "end";</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="begining" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="end" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="type" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into date\Adding Vacation.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">begining</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Match Output].Columns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="500"
+                      lineageId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Match Output].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">type</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\No vacation"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="No vacation"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\No vacation.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\No vacation.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Inserting into date\No vacation.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\No vacation.Outputs[Derived Column Output].Columns[type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Inserting into date\No vacation.Outputs[Derived Column Output].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,500,1252)"Dzień powszedni"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,500,1252)"Dzień powszedni"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\No vacation.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Inserting into date\No vacation.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\No vacation.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\No vacation.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\No vacation.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\No vacation.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Data]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into date\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.railDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.railDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rok]"
+                      cachedDataType="i4"
+                      cachedName="Rok"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Rok]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Miesiac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Miesiac"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Miesiac]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MiesiacNO]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNO"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNo]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[MiesiacNO]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienTygodnia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienTygodnia"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienTygodnia]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodnia]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienTygodniaNO]"
+                      cachedDataType="i4"
+                      cachedName="DzienTygodniaNO"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienTygodniaNo]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodniaNO]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienRoboczy]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienRoboczy]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wakacje]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Wakacje"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wakacje]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Wakacje]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PoraRoku]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PoraRoku"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PoraRoku]"
+                      lineageId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Output].Columns[PoraRoku]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Święto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Święto"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Święto]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Data]"
+                      dataType="i4"
+                      name="ID_Data" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      dataType="wstr"
+                      length="10"
+                      name="Data" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      dataType="i4"
+                      name="Rok" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="Miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNo]"
+                      dataType="i4"
+                      name="MiesiacNo" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="DzienTygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienTygodniaNo]"
+                      dataType="i4"
+                      name="DzienTygodniaNo" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DzienRoboczy" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PoraRoku]"
+                      codePage="1252"
+                      dataType="str"
+                      length="7"
+                      name="PoraRoku" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Wakacje]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Wakacje" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Swieto" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Start DATE = '2020-01-01';
+DECLARE @End DATE = '2023-12-31';
+
+DECLARE @AllDates TABLE
+(
+Date DATETIME,
+Rok INT,
+MiesiacNO INT,
+Miesiac VARCHAR(12),
+DzienTygodniaNO INT,
+DzienTygodnia VARCHAR(12),
+DzienRoboczy VARCHAR(15)
+);
+
+WITH Nbrs_3( n ) AS ( SELECT 1 UNION SELECT 0 ),
+ 
+     Nbrs_2( n ) AS ( SELECT 1 FROM Nbrs_3 n1 CROSS JOIN Nbrs_3 n2 ),
+
+     Nbrs_1( n ) AS ( SELECT 1 FROM Nbrs_2 n1 CROSS JOIN Nbrs_2 n2 ),
+
+     Nbrs_0( n ) AS ( SELECT 1 FROM Nbrs_1 n1 CROSS JOIN Nbrs_1 n2 ),
+
+     Nbrs  ( n ) AS ( SELECT 1 FROM Nbrs_0 n1 CROSS JOIN Nbrs_0 n2 )
+
+INSERT INTO @AllDates
+SELECT 
+DATEADD(DAY, n - 1, @Start) AS Date,
+YEAR(DATEADD(DAY, n - 1, @Start)) AS Rok,
+MONTH(DATEADD(DAY, n - 1, @Start)) AS MiesiacNO,
+CASE MONTH(DATEADD(DAY, n - 1, @Start))
+        WHEN 1 THEN 'Styczeń'
+        WHEN 2 THEN 'Luty'
+        WHEN 3 THEN 'Marzec'
+        WHEN 4 THEN 'Kwiecień'
+        WHEN 5 THEN 'Maj'
+        WHEN 6 THEN 'Czerwiec'
+        WHEN 7 THEN 'Lipiec'
+        WHEN 8 THEN 'Sierpień'
+        WHEN 9 THEN 'Wrzesień'
+        WHEN 10 THEN 'Październik'
+        WHEN 11 THEN 'Listopad'
+        WHEN 12 THEN 'Grudzień'
+END AS Miesiac,
+DATEPART(WEEKDAY, DATEADD(DAY, n - 1, @Start)) AS DzienTygodniaNO,
+CASE DATEPART(WEEKDAY, DATEADD(DAY, n - 1, @Start))
+        WHEN 1 THEN 'Niedziela'
+        WHEN 2 THEN 'Poniedziałek'
+        WHEN 3 THEN 'Wtorek'
+        WHEN 4 THEN 'Środa'
+        WHEN 5 THEN 'Czwartek'
+        WHEN 6 THEN 'Piątek'
+        WHEN 7 THEN 'Sobota'
+ END AS DzienTygodnia,
+CASE DATEPART(WEEKDAY, DATEADD(DAY, n - 1, @Start))
+        WHEN 1 THEN 'Dzień wolny'
+        WHEN 7 THEN 'Dzień wolny'
+        ELSE 'Dzień roboczy'
+END AS DzienRoboczy
+FROM 
+    ( SELECT ROW_NUMBER() OVER (ORDER BY n) AS n FROM Nbrs ) D
+WHERE 
+    n &lt;= DATEDIFF(DAY, @Start, @End) + 1;
+
+SELECT * FROM @AllDates;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into date\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SAM7014\SQLDEV.auxiliary]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      name="Rok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Miesiac]"
+                      length="12"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Miesiac]"
+                      name="Miesiac"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNO]"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNO]"
+                      name="MiesiacNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienTygodnia]"
+                      length="12"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodnia]"
+                      name="DzienTygodnia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodniaNO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienTygodniaNO]"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodniaNO]"
+                      name="DzienTygodniaNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienRoboczy]"
+                      length="15"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienRoboczy]"
+                      name="DzienRoboczy"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      dataType="i4"
+                      name="Rok" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="Miesiac" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNO]"
+                      dataType="i4"
+                      name="MiesiacNO" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="DzienTygodnia" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienTygodniaNO]"
+                      dataType="i4"
+                      name="DzienTygodniaNO" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DzienRoboczy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      name="Rok" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Miesiac]"
+                      name="Miesiac" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNO]"
+                      name="MiesiacNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienTygodnia]"
+                      name="DzienTygodnia" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienTygodniaNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienTygodniaNO]"
+                      name="DzienTygodniaNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienRoboczy]"
+                      name="DzienRoboczy" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Setting Ordinary Day"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Setting Ordinary Day"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Setting Ordinary Day.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Inserting into date\Setting Ordinary Day.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Output].Columns[holiday]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Output].Columns[holiday]"
+                      name="holiday"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,500,1252)"Dzień roboczy"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,500,1252)"Dzień roboczy"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Inserting into date\Setting Ordinary Day.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Setting Working Day"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Setting Working Day"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienRoboczy]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[bank_holiday]} ? "Dzień wolny" : "Dzień roboczy"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">bank_holiday ? "Dzień wolny" : "Dzień roboczy"</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input].Columns[bank_holiday]"
+                      cachedDataType="bool"
+                      cachedName="bank_holiday"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[bank_holiday]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Union Holiday"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union Holiday"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[Rok]"
+                      cachedDataType="i4"
+                      cachedName="Rok"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[Miesiac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Miesiac"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Miesiac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[MiesiacNO]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNO"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[DzienTygodnia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienTygodnia"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodnia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[DzienTygodniaNO]"
+                      cachedDataType="i4"
+                      cachedName="DzienTygodniaNO"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodniaNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienRoboczy]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1].Columns[holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="holiday"
+                      lineageId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output].Columns[holiday]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[Rok]"
+                      cachedDataType="i4"
+                      cachedName="Rok"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[Miesiac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Miesiac"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Miesiac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[MiesiacNO]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNO"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[DzienTygodnia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienTygodnia"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodnia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[DzienTygodniaNO]"
+                      cachedDataType="i4"
+                      cachedName="DzienTygodniaNO"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienTygodniaNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      lineageId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienRoboczy]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2].Columns[holiday]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="holiday"
+                      lineageId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Output].Columns[holiday]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]"
+                      name="Rok" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]"
+                      name="Miesiac" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]"
+                      name="MiesiacNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]"
+                      name="DzienTygodnia" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]"
+                      name="DzienTygodniaNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]"
+                      name="DzienRoboczy" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]"
+                      name="Święto" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into date\Union Vacation"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union Vacation"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[Rok]"
+                      cachedDataType="i4"
+                      cachedName="Rok"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Rok]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[Miesiac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Miesiac"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Miesiac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[MiesiacNO]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNO"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[MiesiacNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[DzienTygodnia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienTygodnia"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodnia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[DzienTygodniaNO]"
+                      cachedDataType="i4"
+                      cachedName="DzienTygodniaNO"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodniaNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienRoboczy]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[Święto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Święto"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Święto]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="type"
+                      lineageId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Match Output].Columns[type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Wakacje]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[Rok]"
+                      cachedDataType="i4"
+                      cachedName="Rok"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Rok]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Rok]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[Miesiac]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="Miesiac"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Miesiac]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Miesiac]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[MiesiacNO]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNO"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[MiesiacNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[MiesiacNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[DzienTygodnia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienTygodnia"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodnia]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodnia]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[DzienTygodniaNO]"
+                      cachedDataType="i4"
+                      cachedName="DzienTygodniaNO"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienTygodniaNO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodniaNO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[DzienRoboczy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DzienRoboczy"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[DzienRoboczy]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienRoboczy]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[Święto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Święto"
+                      lineageId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1].Columns[Święto]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Święto]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3].Columns[type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="type"
+                      lineageId="Package\Inserting into date\No vacation.Outputs[Derived Column Output].Columns[type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Wakacje]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Rok]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Rok]"
+                      name="Rok" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Miesiac]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Miesiac]"
+                      name="Miesiac" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[MiesiacNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[MiesiacNO]"
+                      name="MiesiacNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodnia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodnia]"
+                      name="DzienTygodnia" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodniaNO]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienTygodniaNO]"
+                      name="DzienTygodniaNO" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienRoboczy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[DzienRoboczy]"
+                      name="DzienRoboczy" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Święto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Święto]"
+                      name="Święto" />
+                    <outputColumn
+                      refId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Wakacje]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1].Columns[Wakacje]"
+                      name="Wakacje" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Inserting into date.Paths[Derived Column Output]"
+              endId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 1]"
+              name="Derived Column Output"
+              startId="Package\Inserting into date\Setting Working Day.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Derived Column Output1]"
+              endId="Package\Inserting into date\Union Holiday.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Inserting into date\Setting Ordinary Day.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Derived Column Output2]"
+              endId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 3]"
+              name="Derived Column Output"
+              startId="Package\Inserting into date\No vacation.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Derived Column Output3]"
+              endId="Package\Inserting into date\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Inserting into date\Adding Season Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Lookup Match Output]"
+              endId="Package\Inserting into date\Setting Working Day.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Inserting into date\Adding Holidays.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Lookup Match Output1]"
+              endId="Package\Inserting into date\Union Vacation.Inputs[Union All Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Inserting into date\Adding Vacation.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Lookup Match Output2]"
+              endId="Package\Inserting into date\Adding Season Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Inserting into date\Adding Season.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Lookup No Match Output]"
+              endId="Package\Inserting into date\Setting Ordinary Day.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Inserting into date\Adding Holidays.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Lookup No Match Output1]"
+              endId="Package\Inserting into date\No vacation.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Inserting into date\Adding Vacation.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[OLE DB Source Output]"
+              endId="Package\Inserting into date\Adding Holidays.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Inserting into date\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Inserting into date.Paths[Union All Output 1]"
+              endId="Package\Inserting into date\Adding Vacation.Inputs[Lookup Input]"
+              name="Union All Output 1"
+              startId="Package\Inserting into date\Union Holiday.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Inserting into date.Paths[Union All Output 11]"
+              endId="Package\Inserting into date\Adding Season.Inputs[Lookup Input]"
+              name="Union All Output 1"
+              startId="Package\Inserting into date\Union Vacation.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Holiday"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0C6D791C-4803-4ADA-A7C5-F6F5D270F4E7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Holiday"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="holiday.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Season"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{918E365F-290D-43FE-8D3C-BAFBB96D408D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Season"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="season.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4C761FAE-3F8C-4C20-8BCB-E3C3721C41B1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12003FD9-B172-4036-BC81-9BE65DDCB876}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="time.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Vacation"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F62CCD0B-24E4-49AB-BF52-6E7E9D6E9153}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Vacation"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{05B8C540-94C4-4403-AB3E-F0FAA70E3A62}"
+          SQLTask:SqlStmtSourceType="FileConnection"
+          SQLTask:SqlStatementSource="vacation.sql"
+          SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FD0461C8-C0D0-45C2-A7D9-0473FBD5F273}"
+      DTS:From="Package\Create auxiliary tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Inserting into Season" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7AC2823C-1704-4A7B-A653-BAD01976AFB7}"
+      DTS:From="Package\Create auxiliary tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Inserting into Vacation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{156B4096-E0D9-46A3-A201-3028A7A69832}"
+      DTS:From="Package\Create auxiliary tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Inserting into Holiday" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{88B9EF01-6BEC-44F7-8144-A3C798137BE0}"
+      DTS:From="Package\Inserting into Holiday"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Inserting into date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC0D3E17-CD23-49BC-87EB-4A06CC00FB15}"
+      DTS:From="Package\Inserting into Vacation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Inserting into date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{FE8AEFC6-8A36-4F09-9592-7D15DC5B2655}"
+      DTS:From="Package\Inserting into Season"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Inserting into date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{88E73FA5-AF92-419C-9BCE-11B4B1AF30CA}"
+      DTS:From="Package\Inserting into date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Dropping auxiliary tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Create auxiliary tables"
+          TopLeft="328,108" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Dropping auxiliary tables"
+          TopLeft="328,603" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Inserting into date"
+          TopLeft="342,480" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Inserting into Holiday"
+          TopLeft="595,233" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Inserting into Season"
+          TopLeft="71,229" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Inserting into Time"
+          TopLeft="636,470" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Inserting into Vacation"
+          TopLeft="327,308" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="378,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-207.5,79"
+              Start="0,0"
+              End="-207.5,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0547945205479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.0547945205479"
+                    Point2="0,27.0547945205479"
+                    Point3="-4,27.0547945205479" />
+                  <mssgle:LineSegment
+                    End="-203.5,27.0547945205479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-203.5,27.0547945205479"
+                    Point2="-207.5,27.0547945205479"
+                    Point3="-207.5,31.0547945205479" />
+                  <mssgle:LineSegment
+                    End="-207.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="426.75,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,158"
+              Start="0,0"
+              End="0,150.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,150.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="470,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229,83"
+              Start="0,0"
+              End="229,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4246575342466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4246575342466"
+                    Point2="0,28.4246575342466"
+                    Point3="4,28.4246575342466" />
+                  <mssgle:LineSegment
+                    End="225,28.4246575342466" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225,28.4246575342466"
+                    Point2="229,28.4246575342466"
+                    Point3="229,32.4246575342466" />
+                  <mssgle:LineSegment
+                    End="229,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="699,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-234.5,205"
+              Start="0,0"
+              End="-234.5,197.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,130.505928853755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,130.505928853755"
+                    Point2="0,134.505928853755"
+                    Point3="-4,134.505928853755" />
+                  <mssgle:LineSegment
+                    End="-230.5,134.505928853755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-230.5,134.505928853755"
+                    Point2="-234.5,134.505928853755"
+                    Point3="-234.5,138.505928853755" />
+                  <mssgle:LineSegment
+                    End="-234.5,197.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="427.25,350">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,130"
+              Start="0,0"
+              End="0,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="170.5,271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="215,209"
+              Start="0,0"
+              End="215,201.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,133.130434782609" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,133.130434782609"
+                    Point2="0,137.130434782609"
+                    Point3="4,137.130434782609" />
+                  <mssgle:LineSegment
+                    End="211,137.130434782609" />
+                  <mssgle:CubicBezierSegment
+                    Point1="211,137.130434782609"
+                    Point2="215,137.130434782609"
+                    Point3="215,141.130434782609" />
+                  <mssgle:LineSegment
+                    End="215,201.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="425.25,522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Inserting into date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Inserting into date\Union Holiday"
+          TopLeft="432,371" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Inserting into date\Setting Ordinary Day"
+          TopLeft="560,282" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Inserting into date\Adding Vacation"
+          TopLeft="413,485" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Inserting into date\Adding Season"
+          TopLeft="804.444444444445,592.222222222222" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Inserting into date\Setting Working Day"
+          TopLeft="264,284" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Inserting into date\Union Vacation"
+          TopLeft="549.555555555556,586.333333333333" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Inserting into date\OLE DB Destination"
+          TopLeft="657.777777777778,696.666666666667" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Inserting into date\No vacation"
+          TopLeft="266.222222222222,579.666666666667" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Inserting into date\Adding Season Column"
+          TopLeft="1062.22222222222,591.111111111111" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Inserting into date\Adding Holidays"
+          TopLeft="413,112" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Inserting into date\OLE DB Source"
+          TopLeft="409,18" />
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[OLE DB Source Output]"
+          TopLeft="487,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Lookup No Match Output1]"
+          TopLeft="466,527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-132.777777777778,52.6666666666667"
+              Start="0,0"
+              End="-132.777777777778,45.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.389527458493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.389527458493"
+                    Point2="0,21.389527458493"
+                    Point3="-4,21.389527458493" />
+                  <mssgle:LineSegment
+                    End="-128.777777777778,21.389527458493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-128.777777777778,21.389527458493"
+                    Point2="-132.777777777778,21.389527458493"
+                    Point3="-132.777777777778,25.389527458493" />
+                  <mssgle:LineSegment
+                    End="-132.777777777778,45.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.195275607639,26.389527458493,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Lookup No Match Output]"
+          TopLeft="514.333333333333,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.166666666667,128"
+              Start="0,0"
+              End="134.166666666667,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.9897172236504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.9897172236504"
+                    Point2="0,51.9897172236504"
+                    Point3="4,51.9897172236504" />
+                  <mssgle:LineSegment
+                    End="130.166666666667,51.9897172236504" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130.166666666667,51.9897172236504"
+                    Point2="134.166666666667,51.9897172236504"
+                    Point3="134.166666666667,55.9897172236504" />
+                  <mssgle:LineSegment
+                    End="134.166666666667,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="11.2769466145833,56.9897172236504,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Lookup Match Output2]"
+          TopLeft="952.444444444445,612.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="109.777777777778,0"
+              Start="0,0"
+              End="102.277777777778,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="102.277777777778,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.94750217013897,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Lookup Match Output1]"
+          TopLeft="515,527">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.8888888888891,59.3333333333331"
+              Start="0,0"
+              End="85.8888888888891,51.8333333333331">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6542330259848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6542330259848"
+                    Point2="0,29.6542330259848"
+                    Point3="4,29.6542330259848" />
+                  <mssgle:LineSegment
+                    End="81.8888888888891,29.6542330259848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.8888888888891,29.6542330259848"
+                    Point2="85.8888888888891,29.6542330259848"
+                    Point3="85.8888888888891,33.6542330259848" />
+                  <mssgle:LineSegment
+                    End="85.8888888888891,51.8333333333331" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.24694227430543,34.6542330259848,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Lookup Match Output]"
+          TopLeft="465.666666666667,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.666666666667,130"
+              Start="0,0"
+              End="-113.666666666667,122.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8020565552699" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.8020565552699"
+                    Point2="0,52.8020565552699"
+                    Point3="-4,52.8020565552699" />
+                  <mssgle:LineSegment
+                    End="-109.666666666667,52.8020565552699" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.666666666667,52.8020565552699"
+                    Point2="-113.666666666667,52.8020565552699"
+                    Point3="-113.666666666667,56.8020565552699" />
+                  <mssgle:LineSegment
+                    End="-113.666666666667,122.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.024720052083,57.8020565552699,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Derived Column Output3]"
+          TopLeft="1155.72222222222,633.111111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-412.444444444445,63.5555555555555"
+              Start="0,0"
+              End="-412.444444444445,56.0555555555555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7777777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.7777777777778"
+                    Point2="0,31.7777777777778"
+                    Point3="-4,31.7777777777778" />
+                  <mssgle:LineSegment
+                    End="-408.444444444445,31.7777777777778" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-408.444444444445,31.7777777777778"
+                    Point2="-412.444444444445,31.7777777777778"
+                    Point3="-412.444444444445,35.7777777777778" />
+                  <mssgle:LineSegment
+                    End="-412.444444444445,56.0555555555555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Derived Column Output2]"
+          TopLeft="400.222222222222,604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="149.333333333334,0"
+              Start="0,0"
+              End="141.833333333334,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="141.833333333334,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Derived Column Output1]"
+          TopLeft="648.5,324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-121.833333333333,47"
+              Start="0,0"
+              End="-121.833333333333,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8901098901099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8901098901099"
+                    Point2="0,27.8901098901099"
+                    Point3="-4,27.8901098901099" />
+                  <mssgle:LineSegment
+                    End="-117.833333333333,27.8901098901099" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-117.833333333333,27.8901098901099"
+                    Point2="-121.833333333333,27.8901098901099"
+                    Point3="-121.833333333333,31.8901098901099" />
+                  <mssgle:LineSegment
+                    End="-121.833333333333,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Derived Column Output]"
+          TopLeft="352,326">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.333333333333,45"
+              Start="0,0"
+              End="129.333333333333,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.7032967032967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.7032967032967"
+                    Point2="0,26.7032967032967"
+                    Point3="4,26.7032967032967" />
+                  <mssgle:LineSegment
+                    End="125.333333333333,26.7032967032967" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.333333333333,26.7032967032967"
+                    Point2="129.333333333333,26.7032967032967"
+                    Point3="129.333333333333,30.7032967032967" />
+                  <mssgle:LineSegment
+                    End="129.333333333333,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Union All Output 11]"
+          TopLeft="699.555555555556,610.277777777778">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.888888888889,0"
+              Start="0,0"
+              End="97.3888888888889,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="97.3888888888889,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Inserting into date.Paths[Union All Output 1]"
+          TopLeft="504,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5,72"
+              Start="0,0"
+              End="-13.5,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32"
+                    Point2="0,36"
+                    Point3="-4,36" />
+                  <mssgle:LineSegment
+                    End="-9.5,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.5,36"
+                    Point2="-13.5,36"
+                    Point3="-13.5,40" />
+                  <mssgle:LineSegment
+                    End="-13.5,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into date\Adding Vacation">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">true</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[vacation]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into date\Adding Season">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">true</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[season]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into date\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into date\Adding Holidays">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[holidays]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into date\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
