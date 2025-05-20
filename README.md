@@ -130,6 +130,42 @@ Po spełnieniu powyższych kroków uruchom:
 
 ![image](https://github.com/user-attachments/assets/0da9f725-e44f-4efd-86d1-b99893fd193b)
 
+### 6. Zapytania MDX
+
+Plik **`zapytaniaMDX.mdx`** zawiera **12 przykładowych zapytań MDX** ilustrujących typowe scenariusze analizy danych w kostce **Rail DW**. Każde zapytanie demonstruje inną technikę MDX (agregacja, filtrowanie, `SET`, `TOPCOUNT`, parametryzacja) oraz odpowiada na konkretne pytanie biznesowe.
+
+| # | Cel analizy | Kluczowe wymiary / miary |
+|---|-------------|--------------------------|
+| 1 | Porównanie średniego obłożenia pociągów w różnych **porach dnia** | `[Pora Dnia]`, `ŚrednieOblozenie` |
+| 2 | Obłożenie pociągów w **dniach tygodnia** | `[Dzień Tygodnia]`, `ŚrednieOblozenie` |
+| 3 | Wykrycie połączeń z obłożeniem **< 60 %** | `[Połączenie]`, filtr na `ŚrednieOblozenie` |
+| 4 | Liczba pasażerów kończących trasę na danym **przystanku** w wybranym **kursie** | `[Przystanek Końcowy]`, `Ilosc Biletow`, `[Kurs NO]` |
+| 5 | Różnice w obłożeniu w **miesiącach** roku dla dwóch wybranych **połączeń** | `CROSSJOIN`, `[Miesiąc]`, `[Połączenie]` |
+| 6 | Średnie obłożenie **wagonów przedziałowych vs bezprzedziałowych** określonego pociągu | `[Miesiąc]`, miary `ŚrednieOblozenieBezprzedzialowe`, `ŚrednieOblozeniePrzedzialowe` |
+| 7 | Porównanie obłożenia **modeli pociągów** odjeżdżających w **podobnej godzinie** | zdefiniowany `SET [PodobneGodziny]` |
+| 8 | Wpływ **kategorii prędkości** na obłożenie pociągu na konkretnej trasie | `[Kategoria Prędkości]`, `[Nazwa Połączenia]` |
+| 9 | Zależność obłożenia od **roku produkcji** pociągów na wybranej trasie | `[Kategoria Rok Produkcji]` |
+| 10 | Obłożenie pociągów w **okresie letnim** z/bez **klimatyzacji** | `[Pora Roku] × [Klimatyzacja]` |
+| 11 | **Liczba sprzedanych biletów** w poszczególnych **porach roku** | `[Pora Roku]`, `Ilosc Biletow` |
+| 12 | **Top 5 miesięcy** o najwyższej sprzedaży biletów | `TOPCOUNT`, `[Miesiąc]`, `Ilosc Biletow` |
+
+### 7. Opracowanie dashboardów i wizualizacja danych
+
+Plik **`dashboardy.pbix`** zawiera interaktywny raport Power BI zbudowany na bazie kostki **Rail DW**. Udostępniamy również wersję statyczną w formacie **PDF**: `dashboardy.pdf`.
+
+#### Przykładowe widoki z utworzonej wizualizacji danych
+
+<h3 align=center> Metryki sukcesu </h3>
+
+![image](https://github.com/user-attachments/assets/6c32988a-cd51-46fc-9855-a8ac7a7fd828)
+
+<h3 align=center> Analiza ilości pasażerów </h3>
+
+![image](https://github.com/user-attachments/assets/9fee1fc4-769d-4f0c-8065-237a4513a0d0)
+
+
+
+
 
 
 
